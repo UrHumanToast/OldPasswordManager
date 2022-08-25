@@ -1,0 +1,20 @@
+#!/bin/bash
+#compile final project for windows and linux
+#Aaron Meek DEC 5, 2021
+
+clear
+echo
+echo "LINUX"
+gcc -Wall main.c account.c common.c details.c -o password_manager
+i686-w64-mingw32-gcc main.c account.c common.c details.c -o password_manager
+echo
+echo "Do you want to keep the output [Y/y]?"
+read INPUT
+
+if [[ "$INPUT" == "Y" || "$INPUT" == 'y' ]]
+	then
+		echo
+		echo "NOT CLEARING DISPLAY... (INPUT: ${INPUT})"
+else
+	clear
+fi
